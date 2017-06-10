@@ -50,14 +50,18 @@ print("Import of data complete")
 print("Trainig Started")
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, Cropping2D, Convolution2D
+from keras.layers.pooling import MaxPooling2D
 
 model = Sequential()
 model.add(Lambda(lambda x:x/255.0-0.5, input_shape=(X_train[0].shape)))
 model.add(Cropping2D(cropping=((70,25),(0,0)))) #65x320x3
-model.add(Convolution2D(1, 1, 1, border_mode='valid', subsample=(1, 10), activation='elu'))
+model.add(Convolution2D(1, 1, 1, border_mode='valid', activation='elu'))
 model.add(Convolution2D(3, 3, 3, border_mode='valid', activation='elu'))
-model.add(Convolution2D(6, 5, 5, border_mode='valid', subsample=(2, 2), activation='elu'))
-model.add(Convolution2D(16, 5, 5, border_mode='valid', subsample=(2, 2), activation='elu'))
+model.add(MaxPooling2D())
+model.add(Convolution2D(6, 5, 5, border_mode='valid', activation='elu'))
+model.add(MaxPooling2D())
+model.add(Convolution2D(16, 5, 5, border_mode='valid', activation='elu'))
+model.add(MaxPooling2D())
 model.add(Flatten())
 model.add(Dense(100))
 model.add(Dense(50))
