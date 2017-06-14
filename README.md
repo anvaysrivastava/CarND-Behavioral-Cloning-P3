@@ -26,7 +26,6 @@ My project includes the following files:
 * drive.py for driving the car in autonomous mode
 * model.h5 containing a trained convolution neural network
 * writeup.md writeup for the project.
-***Unable to upload due to file size limitation***
 * video.mp4 https://www.youtube.com/watch?v=OrJqu4vHCS4.
 
 ####2. Submission includes functional code

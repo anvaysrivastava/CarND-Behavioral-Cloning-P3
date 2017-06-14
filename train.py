@@ -77,7 +77,6 @@ from keras.layers.pooling import MaxPooling2D
 from keras.layers.core import Dropout
 
 model = Sequential()
-# model.add(Lambda(lambda x:x/32.0-4.0, input_shape=(X_train[0].shape)))
 model.add(Cropping2D(cropping=((70,25),(0,0)),input_shape=(X_train[0].shape))) #65x320x3
 model.add(Convolution2D(5, 3, 3, border_mode='valid', activation='elu'))
 model.add(MaxPooling2D())
