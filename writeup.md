@@ -8,12 +8,12 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -22,36 +22,36 @@ My project includes the following files:
 * writeup.md writeup for the project.
 * video.mp4 video of car running one full lap on autonomous mode.
 
-####2. Submission includes functional code
+#### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing
 ```sh
 python drive.py model.h5
 ```
 
-####3. Submission code is usable and readable
+#### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. An appropriate model architecture has been employed
+#### 1. An appropriate model architecture has been employed
 
 My model consists of a convolution neural network with 3x3 and 5x5 filter sizes and depths between 5 and 16 (model.py lines 81-85)
 
 The model includes ELU layers to introduce nonlinearity (model.py lines 81-85).
 
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 The model contains dropout layer in order to reduce overfitting (model.py line 88).
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 12-40). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 93).
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road.
 
@@ -61,9 +61,9 @@ manual_data : In order to teach car how to recover from steep turns, I did a lap
 smooth_driving : So that zig zag driving does not become the behavior of car. I did two laps trying to drive the car as center as possible.
 dirt_curve1 : So that the car can give priority to use tarmac rather than dirt on the fork. I drove the car on that section two times.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
 My first step was to see how the car performs on lenet.
 
@@ -77,9 +77,10 @@ Hence I added more data to the training set.
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture (model.py lines 80-93) consisted of a following
+
 | Layer                 |     Description                               |
 |:---------------------:|:---------------------------------------------:|
 | Input                 | Trimmed image                                 |
