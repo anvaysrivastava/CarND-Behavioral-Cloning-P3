@@ -1,7 +1,5 @@
 # SDC data files
-dirt_curve1/
-manual_data/
-smooth_driving/
+
 # Development
 *.swp
 
