@@ -87,6 +87,7 @@ print("Import of data complete")
 print("Trainig Started")
 
 model = Sequential()
+model.add(Lambda(lambda x:x-128.0, input_shape=(X_train[0].shape)))
 model.add(Cropping2D(cropping=((70,25),(0,0)),input_shape=(X_train[0].shape))) #65x320x3
 model.add(Conv2D(5, (3, 3), padding='valid', activation='elu'))
 model.add(MaxPooling2D())
